@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
+    String mVerificationId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         mSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mVerificationId != null)
+                    verifyPhoneNumberWithCode();
+
                 startPhoneNumberVerification();
             }
         });
@@ -55,7 +60,20 @@ public class MainActivity extends AppCompatActivity {
             public void onVerificationFailed(@NonNull FirebaseException e) {
 
             }
+
+            @Override
+            public void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(verificationId, forceResendingToken);
+
+                mVerificationId = verificationId;
+                mSend.setText("Verify Code");
+            }
         };
+    }
+
+    private void verifyPhoneNumberWithCode() {
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, mCode.getText().toString());
+        signInWithPhoneAuthCredential(credential);
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential phoneAuthCredential) {
