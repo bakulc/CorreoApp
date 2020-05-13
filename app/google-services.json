@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "217000562322",
+    "firebase_url": "https://correoapp-c1050.firebaseio.com",
+    "project_id": "correoapp-c1050",
+    "storage_bucket": "correoapp-c1050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217000562322:android:44ee57e37aea4e3e61604b",
+        "android_client_info": {
+          "package_name": "com.example.correoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217000562322-o1ghvhppks5939h9465ru31q732cpg1f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.correoapp",
+            "certificate_hash": "6f08afd0da3ebf9f719dff92fd13862eb1830dfb"
+          }
+        },
+        {
+          "client_id": "217000562322-46uf2ovenqavakobgerta01ajem8n0qm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWYwqZyx6VyyEdpDMfSWc7klt9cfHZZI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217000562322-46uf2ovenqavakobgerta01ajem8n0qm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
